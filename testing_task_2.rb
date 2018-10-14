@@ -4,8 +4,17 @@
 # Correct the errors below that you spotted in task 1.
 
 require_relative('card.rb')
-class CardGame
 
+class CardGame
+  attr_accessor :cards
+
+  def initialize(cards = [])
+    @cards = cards;
+  end
+
+  def add_cards(card)
+    @cards >> card
+  end
 
   def checkforAce(card)
     if card.value == 1
@@ -14,20 +23,25 @@ class CardGame
       return false
     end
    end
- end
+
 
   def highest_card(card1, card2)
   if card1.value > card2.value
-    return card.suit
+    return card1.suit
   else
-    card2
+    card2.suit
   end
 end
 
-
-def self.cards_total(cards)
+def cards_total(cards) # no need for self method, cards array doesn't exist
+  total = [0]
+  #not been assigned a variable
   for card in cards
     total += card.value
-    return "You have a total of" + total
-  end
+
+  end #return should be here
+  return "You have a total of" + total
 end
+
+
+end #class end

@@ -10,7 +10,8 @@
 
 require_relative('card.rb')
 class CardGame
-
+# no initialisation of CardGame instance
+# no methods to add cards to card game
 
   def checkforAce(card)
     if card.value = 1 # = should be ==
@@ -24,17 +25,17 @@ class CardGame
   if card1.value > card2.value
     return card.name #suit, not name
   else
-    card2
+    card2 # no method called on card2
   end
 end
-end 
-
-def self.cards_total(cards)
-  total #not needed
+end #extra end
+#
+def self.cards_total(cards) # no need for self method, cards array doesn't exist
+  total #not been assigned a variable total = [0]
   for card in cards
     total += card.value
     return "You have a total of" + total
-  end
+  end #return should be here
 end
 
 
